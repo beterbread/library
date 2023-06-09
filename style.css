@@ -50,12 +50,11 @@ table {
 /*Add book form*/
 .form {
   position: absolute;
-  top: 50vh;
-  left: 50vw;
+  top: 50px;
   width: auto;
   height: auto;
   border: 1px black solid;
-  opacity: 0;
+  visibility: hidden;
 }
 
 form {

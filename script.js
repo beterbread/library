@@ -19,24 +19,24 @@ function display() {
     let title = document.createElement('p');
     let author = document.createElement('p');
     let pages = document.createElement('p');
-    let read = document.createElement('button');
+    let readBtn = document.createElement('button');
     let remove = document.createElement('button');
-    if (library[i].read === 'on') {
-      read.classList.add('readTrue');
-      read.textContent = 'Read';
+    if (library[i].read === true) {
+      readBtn.classList.add('readTrue');
+      readBtn.textContent = 'Read';
     }
     else {
-      read.classList.add('readFalse'); 
-      read.textContent = 'Not Read';  
+      readBtn.classList.add('readFalse'); 
+      readBtn.textContent = 'Not Read';  
     }
-    read.addEventListener('click', () => {
-      if (read.getAttribute('class') === 'readTrue') {
-        read.classList.replace('readTrue', 'readFalse');
-        read.textContent = 'Not Read';
+    readBtn.addEventListener('click', () => {
+      if (readBtn.getAttribute('class') === 'readTrue') {
+        readBtn.classList.replace('readTrue', 'readFalse');
+        readBtn.textContent = 'Not Read';
       }
       else {
-        read.classList.replace('readFalse', 'readTrue');
-        read.textContent = 'Read';  
+        readBtn.classList.replace('readFalse', 'readTrue');
+        readBtn.textContent = 'Read';  
       }
     });
     remove.addEventListener('click', () => {
@@ -50,7 +50,7 @@ function display() {
     book.appendChild(title);
     book.appendChild(author);
     book.appendChild(pages);
-    book.appendChild(read);
+    book.appendChild(readBtn);
     book.append(remove);
     main.appendChild(book);
   }
@@ -68,19 +68,19 @@ const read = document.querySelector('.read');
 const submit = document.querySelector('.submit');
 
 add.addEventListener('click', () => {
-  form.style.opacity = 1;
+  form.style.visibility = 'visible';
 });
 
 submit.addEventListener('click', (event) => {
   event.preventDefault();
   if (title.value !== '' && author.value !== '' && pages.value !== '') {
-    form.style.opacity = 0;
-    let book = new Book(title.value, author.value, pages.value, read.value);
+    form.style.visibility = 'hidden';
+    let book = new Book(title.value, author.value, pages.value, read.checked);
     addBook(book);
     display();
     title.value = '';
     author.value = '';
     pages.value = '';
-    read.value = '';
+    read.checked = false;
   }
 });
