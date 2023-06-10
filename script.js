@@ -50,8 +50,10 @@ function display() {
     book.appendChild(title);
     book.appendChild(author);
     book.appendChild(pages);
-    book.appendChild(readBtn);
-    book.append(remove);
+    let div = document.createElement('div');
+    div.appendChild(readBtn);
+    div.appendChild(remove);
+    book.appendChild(div);
     main.appendChild(book);
   }
 }
