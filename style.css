@@ -53,19 +53,15 @@ body {
 
 /*Add book form*/
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: auto;
   height: auto;
+  transform: translate(-50%, -50%);
   border-radius: 5px;
   visibility: hidden;
   background-color: white;
-  padding: 30px;
 }
 
 .form-overlay {
@@ -81,12 +77,13 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2vw 2vw;
 }
 
 form div {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: .75vw;
 }
 
 .form-header, .form-sub {
@@ -94,31 +91,54 @@ form div {
 }
 
 .form-header {
-  font-size: 20px;
+  font-size: 2vw;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 1vw;
+}
+
+.form-sub {
+  font-size: 1.5vw;
+  margin-right: 0.5vw;
 }
 
 input:not(.read) {
   outline: none;
-  margin-bottom: 20px;
-  height: 30px;
+  width: 85%;
+  height: 2vw;
+  margin-bottom: 1vw;
+  font-size: 1.25vw;
+  padding: .25vw;
+  outline: none;
+  border: 1px solid black;
+  color: #323232;
 }
 
 .read {
-  height: 20px;
-  width: 20px;
-  margin-left: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  height: 1.5vw;
+  width: 1.5vw;
+  margin-left: 0.5vw;
+  outline: none;
+  border: 1px solid black;
+  position: relative; 
 }
 
-.read:checked {
-  background-color: white;
+.read:checked::before {
+  content: '\2714'; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2vw; 
+  color: #4d4c4c;
 }
-
 
 .submit {
-  width: 8vw;
-  height: 4vw;
+  width: 80%;
+  height: 3vw;
   border-radius: 2.5vw;
   border-style: none;
   font-size: 1.25vw;
@@ -126,7 +146,7 @@ input:not(.read) {
   background-color: #323232;
   transition: 0.5s background-color ease;
 }
-  
+
 .submit:hover {
   cursor: pointer;
   background-color: #4d4c4c;
