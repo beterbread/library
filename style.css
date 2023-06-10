@@ -62,6 +62,7 @@ body {
   border-radius: 5px;
   visibility: hidden;
   background-color: white;
+  z-index: 9999;
 }
 
 .form-overlay {
@@ -71,6 +72,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0.5;
   visibility: hidden;
+  z-index: 9998;
 }
 
 form {
@@ -159,6 +161,7 @@ input:not(.read) {
   align-items: center;
   background-color: #DDD0C8;
   padding: 2.5vw;
+  border-bottom: 1px #323232 dashed;
 }
 
 .header-title {
@@ -196,33 +199,59 @@ iframe {
 
 /*Main*/
 .main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-auto-rows: 250px;
+  padding: 2vw;
+  gap: 50px;
 }
 
 /*Card*/
 .card {
-  width: 100px;
-  height: 100px;
-  border: 1px black solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 250px;
+  border: 1px #323232 dashed;
+  position: relative;
 }
 
-.readTrue {
-  width: auto; 
+.card p {
+  font-family: 'Lobster', cursive;
+}
+
+.card p:nth-of-type(1) {
+  font-size: 60px;
+  margin-top: 10px;
+}
+
+.card p:nth-of-type(2) {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.card button:nth-of-type(1) {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.card button:nth-of-type(2) {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.card button {
+  border: 1px #323232 dashed;
+  color: #323232;
+  background-color: white;
   height: auto;
-  background-color: green;
-}
-
-.readFalse {
-  width: auto; 
-  height: auto;
-  background-color: red;
-}
-
-.remove {
   width: auto;
-  height: auto;
-  background-color: red;
+  padding: 5px 10px;
+  font-size: 14px;
 }
 
 .card button:hover {

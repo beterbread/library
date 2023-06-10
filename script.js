@@ -44,8 +44,8 @@ function display() {
       display();
     });
     title.textContent = library[i].title;
-    author.textContent = library[i].author;
-    pages.textContent = library[i].pages;
+    author.textContent = "by " + library[i].author;
+    pages.textContent = library[i].pages + " pages";
     remove.textContent = 'Remove';
     book.appendChild(title);
     book.appendChild(author);
