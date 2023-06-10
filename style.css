@@ -202,9 +202,9 @@ iframe {
   margin-left: 10%;
   margin-right: 10%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 150px;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 12vw;
+  gap: 1vw;
   padding: 2vw;
 }
 
@@ -219,28 +219,28 @@ iframe {
 
 .card p {
   font-family: 'Lobster', cursive;
-  font-size: 24px;
+  font-size: 2vw;
 }
 
 .card p {
   font-family: 'Lobster', cursive;
-  margin-top: 5px;
+  margin-top: .5vw;
 }
 
 .card p:first-of-type {
-  margin-top: 12px;
+  margin-top: 1vw;
 }
 
 .card button:nth-of-type(1) {
   position: absolute;
-  bottom: 10px;
-  left: 20px;
+  bottom: 1vw;
+  left: 1.5vw;
 }
 
 .card button:nth-of-type(2) {
   position: absolute;
-  bottom: 10px;
-  right: 20px;
+  bottom: 1vw;
+  right: 1.5vw;
 }
 
 .card button {
@@ -249,8 +249,8 @@ iframe {
   background-color: white;
   height: auto;
   width: auto;
-  padding: 5px 10px;
-  font-size: 14px;
+  padding: .5vvw .7vw;
+  font-size: 1.5vw;
   transition: 0.5s transform ease;
 }
 
