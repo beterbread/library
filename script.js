@@ -56,6 +56,7 @@ function display() {
   }
 }
 
+const overlay = document.querySelector('.form-overlay');
 const form = document.querySelector('.form');
 const add = document.querySelector('.add');
 const main = document.querySelector('.main');
@@ -69,12 +70,14 @@ const submit = document.querySelector('.submit');
 
 add.addEventListener('click', () => {
   form.style.visibility = 'visible';
+  overlay.style.visibility = 'visible';
 });
 
 submit.addEventListener('click', (event) => {
   event.preventDefault();
   if (title.value !== '' && author.value !== '' && pages.value !== '') {
     form.style.visibility = 'hidden';
+    overlay.style.visibility = 'hidden';
     let book = new Book(title.value, author.value, pages.value, read.checked);
     addBook(book);
     display();
@@ -82,5 +85,12 @@ submit.addEventListener('click', (event) => {
     author.value = '';
     pages.value = '';
     read.checked = false;
+  }
+});
+
+overlay.addEventListener('click', (event) => {
+  if (event.target === overlay) {
+    form.style.visibility = 'hidden';
+    overlay.style.visibility = 'hidden';
   }
 });
