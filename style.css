@@ -214,19 +214,25 @@ iframe {
   flex-direction: column;
   align-items: center;
   border: 1px #323232 dashed;
-  padding: .5vw;
+  padding: .75vw;
+  position: relative;
 }
 
-.card div button {
-  margin-left: .5vw;
+.card div {
   margin-top: 1vw;
-  margin-bottom: .5vw;
+}
+
+.card div button:nth-of-type(2) {
+  margin-left: .5vw;
+}
+
+.card p:nth-of-type(2), .card p:nth-of-type(3) {
+  margin-top: .5vw;
 }
 
 .card p {
   font-family: 'Lobster', cursive;
   font-size: 2vw;
-  margin-top: .5vw;
   word-break: break-all;
   white-space: normal;
 }
