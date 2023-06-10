@@ -63,7 +63,6 @@ body {
   visibility: hidden;
   background-color: white;
   z-index: 9999;
-  transition: 5s visibility ease;
 }
 
 .form-overlay {
