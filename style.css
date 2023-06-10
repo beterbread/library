@@ -47,10 +47,14 @@ table {
 	border-spacing: 0;
 }
 
+body {
+  font-family: 'Lora', serif;
+}
+
 /*Add book form*/
 .form {
   position: absolute;
-  top: 50px;
+  top: 250px;
   width: auto;
   height: auto;
   border: 1px black solid;
@@ -66,7 +70,30 @@ form {
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: whitesmoke;
+  align-items: center;
+  background-color: #DDD0C8;
+  padding: 30px;
+}
+
+.header-title {
+  font-size: 50px;
+  color: #323232;
+}
+
+.add {
+  width: 125px;
+  height: 50px;
+  border-radius: 30px;
+  border-style: none;
+  font-size: 20px;
+  color: white;
+  background-color: #323232;
+  transition: 0.5s background-color ease;
+}
+
+.add:hover {
+  cursor: pointer;
+  background-color: #4d4c4c;
 }
 
 /*Main*/
