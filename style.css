@@ -219,7 +219,7 @@ iframe {
 }
 
 .card div {
-  margin-top: 1vw;
+  margin-top: 0.5vw;
 }
 
 .card div button:nth-of-type(2) {
@@ -245,10 +245,10 @@ iframe {
   width: auto;
   padding: .5vw .7vw;
   font-size: 1.5vw;
-  transition: 0.5s transform ease;
+  transition: 0.1s transform ease;
 }
 
 .card button:hover {
   cursor: pointer;
-  transform: translateY(-3px);
+  transform: translateY(-.1vw);
 }

@@ -7,8 +7,13 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+function save() {
+  localStorage.setItem('data', JSON.stringify(library));
+}
+
 function addBook(book) {
   library.push(book);
+  localStorage.setItem('data', JSON.stringify(library));
 }
 
 function display() {
@@ -33,14 +38,18 @@ function display() {
       if (readBtn.getAttribute('class') === 'readTrue') {
         readBtn.classList.replace('readTrue', 'readFalse');
         readBtn.textContent = 'Not Read';
+        library[i].read = false;
       }
       else {
         readBtn.classList.replace('readFalse', 'readTrue');
         readBtn.textContent = 'Read';  
+        library[i].read = true;
       }
+      save();
     });
     remove.addEventListener('click', () => {
       library.splice(i, 1);
+      save();
       display();
     });
     title.textContent = library[i].title;
@@ -96,3 +105,8 @@ overlay.addEventListener('click', (event) => {
     overlay.style.visibility = 'hidden';
   }
 });
+
+if (localStorage.getItem('data')) {
+  library = JSON.parse(localStorage.getItem('data'));
+  display();
+}
