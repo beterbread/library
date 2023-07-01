@@ -78,6 +78,14 @@ const author = document.querySelector('.author');
 const pages = document.querySelector('.pages');
 const read = document.querySelector('.read');
 const submit = document.querySelector('.submit');
+const required = document.querySelector('.required');
+const input = document.querySelectorAll('input');
+
+input.forEach(element => {
+  element.addEventListener('input', () => {
+    required.style.display = 'none';
+  });
+});
 
 add.addEventListener('click', () => {
   form.style.visibility = 'visible';
@@ -86,7 +94,7 @@ add.addEventListener('click', () => {
 
 submit.addEventListener('click', (event) => {
   event.preventDefault();
-  if (title.value !== '' && author.value !== '' && pages.value !== '') {
+  if (title.checkValidity() && author.checkValidity() && pages.checkValidity()) {
     form.style.visibility = 'hidden';
     overlay.style.visibility = 'hidden';
     let book = new Book(title.value, author.value, pages.value, read.checked);
@@ -96,6 +104,15 @@ submit.addEventListener('click', (event) => {
     author.value = '';
     pages.value = '';
     read.checked = false;
+  }
+  else {
+    if (title.valueMissing || author.valueMissing || pages.valueMissing) {
+      required.textContent = '*All fields are required';
+    }
+    else if (pages.validity.rangeUnderflow) {
+      required.textContent = 'A book needs two pages'
+    }
+    required.style.display = 'block';
   }
 });
 

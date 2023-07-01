@@ -154,6 +154,14 @@ input:not(.read) {
   background-color: #4d4c4c;
 }
 
+.required {
+  display: none;
+  color: #CC0000;
+  font-size: 1vw;
+  margin-top: -0.5vw;
+  margin-bottom: 0.5vw;
+}
+
 /*Header*/
 .header {
   display: flex;
@@ -219,7 +227,7 @@ iframe {
 }
 
 .card div {
-  margin-top: 0.75vw;
+  margin-top: 0.5vw;
 }
 
 .card div button:nth-of-type(2) {
