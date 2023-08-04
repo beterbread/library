@@ -17,6 +17,13 @@ function addBook(book) {
 }
 
 function display() {
+  const empty = document.querySelector('.empty');
+  if (library.length === 0) {
+    empty.style.display = 'block';
+  }
+  else {
+    empty.style.display = 'none';
+  }
   main.textContent = '';
   for (let i = 0; i < library.length; i++) {
     let book = document.createElement('div');

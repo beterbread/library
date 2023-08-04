@@ -260,3 +260,8 @@ iframe {
   cursor: pointer;
   transform: translateY(-.1vw);
 }
+
+.empty {
+  text-align: center;
+  margin-top: 1.5vw;
+}
